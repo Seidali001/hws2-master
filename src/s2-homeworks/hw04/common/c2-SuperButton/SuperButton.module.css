@@ -19,20 +19,34 @@
 }
 
 .secondary {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 5px 24px;
     gap: 10px;
+    width: 176px;
+    height: 30px;
+    left: 574px;
+    top: 1622px;
     border: 1px solid #0066CC;
     border-radius: 3px;
 }
 
 .default {
-    width: 130px;
-    background: blue;
-    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 24px;
+    gap: 10px;
+    width: 132px;
+    height: 30px;
+    left: 574px;
+    top: 1465px;
+    background: #0066CC;
+    border-radius: 3px;
 }
 
 .red {
