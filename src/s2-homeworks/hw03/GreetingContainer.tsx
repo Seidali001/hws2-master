@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, useState} from 'react'
+import React, {KeyboardEvent, useState} from 'react'
 import Greeting from './Greeting'
 import {UserType} from './HW3'
 import {Simulate} from "react-dom/test-utils";
@@ -10,13 +10,15 @@ type GreetingContainerPropsType = {
 }
 
 export const pureAddUser = (name: string, setError: (error: string) => void, setName: (name: string) => void, addUserCallback: (name: string) => void) => {
-    if (name.length === 0) {  // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
-        setError('Ошибка! Введите имя!')
-    }else{
-        console.log(name)
-        addUserCallback(name)
-        setName('')
-    }
+  /*  name === '' ? setError('Ошибка! Введите имя!') : addUserCallback(name)
+    setName('')*/
+     if (name.length <= 0) {  // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
+         setError('Ошибка! Введите имя!')
+     }else{
+         console.log(name)
+         addUserCallback(name)
+         setName('')
+     }
 }
 
 export const pureOnBlur = (name: string, setError: (error: string) => void) => { // если имя пустое - показать ошибку
@@ -27,7 +29,7 @@ export const pureOnBlur = (name: string, setError: (error: string) => void) => {
 
 export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: () => void) => { // если нажата кнопка Enter - добавить
     if (e.key === "Enter") {
-    addUser()
+        addUser()
     }
 }
 
@@ -45,9 +47,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
 
     const setNameCallback = (value: string) => { // need to fix any
         setName(value) // need to fix
-        //console.log(value)
         error && setError('')
-        //console.log(value)
     }
     const addUser = () => {
         pureAddUser(name, setError, setName, addUserCallback)

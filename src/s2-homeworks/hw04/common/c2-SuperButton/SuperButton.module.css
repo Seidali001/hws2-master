@@ -1,16 +1,53 @@
 .button {
+
 }
 
 .disabled {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 24px;
+    gap: 10px;
+    width: 133px;
+    height: 30px;
+    left: 574px;
+    top: 1573px;
+    background: #004D99;
+    opacity: 0.5;
+    border-radius: 3px;
 }
 
 .secondary {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 24px;
+    gap: 10px;
+    border: 1px solid #0066CC;
+    border-radius: 3px;
 }
 
 .default {
+    width: 130px;
+    background: blue;
+    color: white;
 }
 
 .red {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 24px;
+    gap: 10px;
+    width: 129px;
+    height: 30px;
+    left: 576px;
+    top: 1519px;
+    background: #CC1439;
+    border-radius: 3px;
 }
 
 .default:hover {
@@ -20,17 +57,26 @@
 }
 
 .secondary:hover {
+
 }
 
 
 .default:active {
+
 }
 
 .secondary:active {
+
 }
 
 .red:active {
 }
 
 .button:disabled {
+
 }
+
+
+
+
+
