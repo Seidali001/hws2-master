@@ -12,4 +12,9 @@
 }
 
 .options {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: column;
+    padding-right: 500px;
 }

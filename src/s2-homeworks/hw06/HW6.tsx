@@ -26,7 +26,7 @@ const HW6 = () => {
     return (
         <div id={'hw6'}>
             <div className={s2.hwTitle}>Homework #6</div>
-            <hr className="line"></hr>
+            <hr className={s2.line}/>
 
             {/*демонстрация возможностей компоненты:*/}
             <div className={s2.hw}>
