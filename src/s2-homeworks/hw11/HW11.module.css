@@ -1,8 +1,12 @@
 .container {
+    width: 147px;
+    color: #00CC22;
 }
 
 .wrapper {
+    color: #00CC22;
 }
 
 .number {
+    color: #0e0e0e;
 }
