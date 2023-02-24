@@ -5,6 +5,7 @@ import React, {
 } from 'react'
 import s from './SuperSelect.module.css'
 import {idID} from "@mui/material/locale";
+import {ThemesElemType} from "../../../hw12/HW12";
 
 type DefaultSelectPropsType = DetailedHTMLProps<
     SelectHTMLAttributes<HTMLSelectElement>,
@@ -12,7 +13,8 @@ type DefaultSelectPropsType = DetailedHTMLProps<
 >
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
-    options?: any[]
+    options: Array<ThemesElemType>
+    value: number
     onChangeOption?: (option: any) => void
 }
 
@@ -20,10 +22,15 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
     options,
     className,
     onChange,
+    value,
     onChangeOption,
     ...restProps
 }) => {
-    const mappedOptions: any[] = options
+
+    const currentValue = options.filter(o => o.id === value)
+    console.log(currentValue[0].id)
+
+    const mappedOptions: any = options
         ? options.map((o) => (
               <option
                   id={'hw7-option-' + o.id}
@@ -37,7 +44,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
         : [] // map options with key
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-        // делают студенты
+
         if(onChangeOption) {
             onChangeOption(+e.currentTarget.value)
 
@@ -52,6 +59,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
         <select
             className={finalSelectClassName}
             onChange={onChangeCallback}
+            value={currentValue[0].id}
             {...restProps}
         >
             {mappedOptions}
