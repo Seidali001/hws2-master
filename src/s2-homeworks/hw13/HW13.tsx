@@ -38,7 +38,7 @@ const HW13 = () => {
                 setImage(success200)
                 // дописать
                 setText(res.data.errorText)
-                setInfo(res.data.Info)
+                setInfo(res.data.info)
 
             })
             .catch((e) => {
