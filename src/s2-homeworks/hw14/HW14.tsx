@@ -48,6 +48,12 @@ const HW14 = () => {
     const onChangeText = (value: string) => {
         setFind(value)
         // делает студент
+        setSearchParams(value)
+    }
+
+   /* const onChangeText = (value: string) => {
+        setFind(value)
+        // делает студент
         getTechs(value)
             .then((res) => {
                 if (res) {
@@ -59,7 +65,7 @@ const HW14 = () => {
         // setSearchParams(
 
         //
-    }
+    }*/
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
