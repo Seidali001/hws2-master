@@ -48,6 +48,7 @@ const HW15 = () => {
                 // делает студент
                 if (res) {
                     setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
                     setLoading(false)
                 }
             })
@@ -56,11 +57,12 @@ const HW15 = () => {
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
 
+
         const params = Object.fromEntries(searchParams)
         params['count'] = newCount + ''
+        params['page'] = newPage + ''
         setPage(newPage)
         setCount(newCount)
-
         sendQuery(params)
         setSearchParams({page: `${newPage}`, count: `${newCount}`})
 
@@ -75,7 +77,7 @@ const HW15 = () => {
         setPage(1) // при сортировке сбрасывать на 1 страницу
 
         sendQuery({...params, sort: newSort})
-        setSearchParams({sort: newSort})
+        setSearchParams({...params, sort: newSort})
 
         //
     }
@@ -107,6 +109,7 @@ const HW15 = () => {
                 {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
 
                 <SuperPagination
+
                     page={page}
                     itemsCountForPage={count}
                     totalCount={totalCount}
