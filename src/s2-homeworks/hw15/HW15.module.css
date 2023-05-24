@@ -16,10 +16,17 @@
 
 .row {
     display: flex;
+
 }
 
 .rowHeader {
     display: flex;
+    width: 606px;
+    height: 36px;
+    left: 70px;
+    top: 2280px;
+
+    background: #E5E5E5;
 }
 
 .loading {
